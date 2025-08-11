@@ -1,1 +1,3 @@
-.doc-portal-venv/
+.doc-portal-venv
+.env
+document_portal.egg-info
