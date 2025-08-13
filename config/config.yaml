@@ -1,0 +1,16 @@
+faiss_db:
+  collection_name: "document portal"
+
+embedding_model:
+  provider: "openai"
+  model_name: "text-embedding-ada-002"
+
+retriever:
+  top_k: 10
+
+llm:
+  groq:
+    provider: "groq"
+    model_name: "deepseek-r1-distill-llama-70b"
+    temperature: 0
+    max_output_tokens: 2048
