@@ -39,10 +39,10 @@ class DocumentAnalyzer:
             self.log.info("Meta data analysis chain initalized.")
             response = chain.invoke({
                 "format_instructions": self.parser.get_format_instructions(),
-                "document_text": document_text()
+                "document_text": document_text
             })
             self.log.info("Meta data extraction successful.", keys=list(response.keys()))
             return response
         except Exception as e:
-            self.log.error("Error analyzing document", {e})
+            self.log.error("Error analyzing document: %s", e)
             raise DocumentException("Failed to analyze document", sys)

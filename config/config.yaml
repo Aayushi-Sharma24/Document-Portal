@@ -9,6 +9,11 @@ retriever:
   top_k: 10
 
 llm:
+  openai:
+    provider: "openai"
+    model_name: "gpt-4o"
+    temperature: 0
+
   groq:
     provider: "groq"
     model_name: "deepseek-r1-distill-llama-70b"
