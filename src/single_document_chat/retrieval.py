@@ -14,6 +14,8 @@ from langchain_core.chat_history import BaseChatMessageHistory
 from utils.model_loader import ModelLoader
 import streamlit as st
 
+load_dotenv()
+
 
 class ConversationalRAG:
     def __init__(self, session_id: str, retriever):
