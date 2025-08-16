@@ -2,17 +2,14 @@ from langchain_core.prompts import ChatPromptTemplate
 
 # Prompt for document analysis
 document_analysis_prompt = ChatPromptTemplate.from_template("""
+You are a highly capable assistant trained to analyze and summarize documents.
+Return ONLY valid JSON matching the exact schema below.
 
-    You are a capable assistant trained to analyze and summarize documents.
-    Return only valid JSON matching the exact schema below.
-                                          
-    {format_instructions}
-    Analyze the document 
+{format_instructions}
 
-    {document_text}
-
-""" 
-)
+Analyze this document:
+{document_text}
+""")
 
 # Prompt for document comparison
 document_comparison_prompt = ChatPromptTemplate.from_template("""
@@ -32,6 +29,7 @@ Your response should follow this format:
 {format_instruction}
 """)
 
+# Central dictionary to register prompts
 PROMPT_REGISTRY = {
     "document_analysis": document_analysis_prompt,
     "document_comparison": document_comparison_prompt
