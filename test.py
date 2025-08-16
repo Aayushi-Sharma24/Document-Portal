@@ -82,6 +82,7 @@ def test_compare_documents():
     # Save files and combine
     ref_file, act_file = comparator.save_uploaded_files(ref_upload, act_upload)
     combined_text = comparator.combine_documents()
+    comparator.clean_old_sessions(keep_latest=3)
 
     print("\n Combined Text Preview (First 1000 chars):\n")
     print(combined_text[:1000])
@@ -91,7 +92,7 @@ def test_compare_documents():
     df = llm_comparator.compare_documents(combined_text)
     
     print("\n Comparison DataFrame:\n")
-    print(df.head())
+    print(df)
 
 if __name__ == "__main__":
     test_compare_documents()
