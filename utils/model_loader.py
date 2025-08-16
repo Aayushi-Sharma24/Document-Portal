@@ -42,7 +42,7 @@ class ModelLoader:
         try:
             log.info("loading embedding model")
             model_name = self.config["embedding_model"]["model_name"]
-            return OpenAIEmbeddings(model_name=model_name)
+            return OpenAIEmbeddings(model=model_name)
         except Exception as e:
             log.error("Failed to load embedding model", error=str(e))
             raise DocumentException("Failed to load embedding model", sys)
