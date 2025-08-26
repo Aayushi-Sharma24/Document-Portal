@@ -49,7 +49,7 @@ class DocumentException(Exception):
         return base
 
     def __repr__(self):
-        return f"DocumentPortalException(file={self.file_name!r}, line={self.lineno}, message={self.error_message!r})"
+        return f"DocumentException(file={self.file_name!r}, line={self.lineno}, message={self.error_message!r})"
 
 
 # if __name__ == "__main__":
